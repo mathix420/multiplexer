@@ -8,22 +8,22 @@ on:
 
 jobs:
   test:
-    runs-on: python:alpine
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python3 -m pip install --upgrade pip
+          pip3 install -r requirements.txt
 
       - name: Running tests
         run: python3 -m unittest -v __tests__/test_*.py
 
 
   publish:
-    runs-on: python:alpine
+    runs-on: ubuntu-latest
 
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
 
@@ -32,8 +32,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-            python -m pip install --upgrade pip setuptools wheel
-            pip install -r requirements.txt
+            python3 -m pip install --upgrade pip setuptools wheel
+            pip3 install -r requirements.txt
 
       - name: pypi-publish
         uses: pypa/gh-action-pypi-publish@v1.1.0
