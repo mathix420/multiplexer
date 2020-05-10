@@ -22,7 +22,7 @@ class TestClient(unittest.TestCase):
     def test_good_book(self):
         book = generate('michel')
         client = Plex(book)
-        self.assert_(client.len)
+        self.assertTrue(client.len)
 
     def test_encoding_decoding(self):
         book = generate(rnd_string(randint(5, 128)))
