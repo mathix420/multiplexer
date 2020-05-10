@@ -6,7 +6,7 @@ These tests are temporary
 '''
 
 
-class TestImageHandler(unittest.TestCase):
+class TestMultiplexer(unittest.TestCase):
 
     def test_step(self):
         self.assertEqual(multiplexer._step("dede"), 'f7fda3aabac0ba0eccd\

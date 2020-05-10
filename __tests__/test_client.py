@@ -13,7 +13,7 @@ def rnd_string(size):
     return ''.join(choice(printable) for i in range(size))
 
 
-class TestImageHandler(unittest.TestCase):
+class TestClient(unittest.TestCase):
 
     def test_security(self):
         self.assertRaises(Exception, Plex, hexlify(
