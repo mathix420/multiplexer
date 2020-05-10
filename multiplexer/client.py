@@ -21,17 +21,17 @@ class Plex():
 
         while stream.bitpos != stream.len:
             match = self.book.rfind(
-                stream.read(8),
+                stream.peek(8),
                 start=rnd.randint(0, self.len),
                 bytealigned=True
             )
             while not match:
                 match = self.book.rfind(
-                    stream.read(8),
+                    stream.peek(8),
                     start=rnd.randint(0, self.len),
                     bytealigned=True
                 )
-                print("SHIT")
+            stream.pos += 8
             out.append(match[0])
             text = text[2:]
         return out
