@@ -30,3 +30,16 @@ class TestClient(unittest.TestCase):
         text = rnd_string(randint(200, 1000))
         res = client.encode(text)
         self.assertEqual(client.decode(res), text)
+
+    def test_h_dencoding_decoding(self):
+        book = generate(rnd_string(randint(5, 128)))
+        client = Plex(book)
+        text = rnd_string(randint(200, 1000))
+        res = client.h_encode(text)
+        self.assertEqual(client.h_decode(res), text)
+
+    def test_many_encoding_decoding(self):
+        book = generate(rnd_string(randint(5, 128)))
+        p = Plex(book)
+        t = rnd_string(10)
+        self.assertTrue(all(p.decode(p.encode(t)) == t for i in range(100)))

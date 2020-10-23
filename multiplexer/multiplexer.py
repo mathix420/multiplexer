@@ -35,11 +35,11 @@ def _step(key):
     return out
 
 
-def generate(key, save=False, path='book.key'):
+def generate(key, save=False, path='book.key', size=THRESHOLD_SIZE):
     i = 0
     output = ''
     initkey = key
-    while len(output) < THRESHOLD_SIZE:
+    while len(output) < size:
         i += 1
         output += _step(key)
         key = output[:-SUBKEY_SIZE]
