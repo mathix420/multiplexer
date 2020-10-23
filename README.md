@@ -18,8 +18,17 @@ book = load() or generate("michel", save=True)
 p = Plex(book)
 
 cypher = p.encode('My secret message')
+print(cypher)
 
 secret_message = p.decode(cypher)
+print(secret_message)
+
+# Human readable
+cypher = p.h_encode('My secret message')
+print(cypher)
+
+secret_message = p.h_decode(cypher)
+print(secret_message)
 ```
 
 ## Logging
