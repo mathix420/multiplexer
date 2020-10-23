@@ -2,7 +2,7 @@ from setuptools import setup, find_namespace_packages
 
 setup(
     name='multiplexer',
-    version='0.0.6',
+    version='0.0.7',
     description='[WIP] New cypher library.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
