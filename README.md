@@ -1,6 +1,6 @@
 # Multiplexer
----
-Multiplexer is an encryption library.
+
+> Multiplexer is an encryption library.
 
 ## Installation
 
@@ -39,3 +39,4 @@ import logging
 logger = logging.getLogger('multiplexer')
 logger.setLevel(logging.INFO)
 ```
+
